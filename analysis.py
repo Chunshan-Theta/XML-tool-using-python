@@ -1,10 +1,33 @@
 # -*- coding: utf-8 -*-
 
 import xml.dom.minidom
+
+
+def NodeDecode(RootNode,i=0):
+	i=i+1
+	for SecondNode in RootNode.childNodes:#one
+		if SecondNode.nodeType == 1:
+			#print SecondNode.nodeType
+			try:
+			   for node in SecondNode.childNodes:
+			   	print "="*i+SecondNode.nodeName+":"+node.data
+				# "=" show the node how many level 
+			except:			   
+	    		   print ""		
+			NodeDecode(SecondNode,i)
+		
+		
+		
+
+
+
 dom1=xml.dom.minidom.parse('test.xml')
 root=dom1.documentElement
-book={}
 
+#function 1  auto analysis
+NodeDecode(root)
+
+# function 2 human analysis
 for nodes in root.childNodes:#one
 	#print nodes.nodeName
     	for nodelist in  nodes.childNodes:#two
@@ -16,47 +39,3 @@ for nodes in root.childNodes:#one / root
     	for nodelist in  nodes.childNodes:#two / one
 		if nodelist.nodeType ==1 and nodes.getAttribute('id')=="1":
 		    	print nodelist.nodeName+':'+nodelist.childNodes[0].data	
-
-
-#node type
-#1	ELEMENT_NODE
-#2	ATTRIBUTE_NODE
-#3	TEXT_NODE
-#4	CDATA_SECTION_NODE
-#5	ENTITY_REFERENCE_NODE
-#6	ENTITY_NODE
-#7	PROCESSING_INSTRUCTION_NODE
-#8	COMMENT_NODE
-#9	DOCUMENT_NODE
-#10	DOCUMENT_TYPE_NODE
-#11	DOCUMENT_FRAGMENT_NODE
-#12	NOTATION_NODE
-
-#sample xml
-#<root version="1.0.1" encoding="UTF-8">
-#<!---->
-#    <one id="1">
-#        <two>HELLO</two>
-#	<two>HELLO2</two>
-#        <two-2>Well, hello!</two-2>
-#	<two-2>Well, hello!</two-2>
-#   </one>
-#    
-#    <one id="2">
-#        <two>WHAT ARE YOU</two>
-#        <two-2>I'm a bot, silly!</two-2>
-#    </one>
-#    <one id="3">
-#        <two>HI</two>
-#        <two-2>HIHI</two-2>
-#    </one>
-#    <one id="4">
-#        <two>HI*</two>
-#        <two-2>HIHI</two-2>
-#    </one>
-#    <one id="5">
-#        <two>安安 *</two>
-#        <two-2>閉嘴</two-2>
-#    </one>
-#    
-#</root>
