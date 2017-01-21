@@ -1,0 +1,27 @@
+<root version="1.0.1" encoding="UTF-8">
+<!---->
+    <one id="1">
+        <two>HELLO</two>
+	<two>HELLO2</two>
+        <two-2>Well, hello!</two-2>
+	<two-2>Well, hello!</two-2>
+    </one>
+    
+    <one id="2">
+        <two>WHAT ARE YOU</two>
+        <two-2>I'm a bot, silly!</two-2>
+    </one>
+    <one id="3">
+        <two>HI</two>
+        <two-2>HIHI</two-2>
+    </one>
+    <one id="4">
+        <two>HI*</two>
+        <two-2>HIHI</two-2>
+    </one>
+    <one id="5">
+        <two>安安 *</two>
+        <two-2>閉嘴</two-2>
+    </one>
+    
+</root>
